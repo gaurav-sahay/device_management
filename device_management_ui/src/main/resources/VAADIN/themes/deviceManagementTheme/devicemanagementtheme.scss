@@ -1,6 +1,6 @@
 @import "../valo/valo";
 @import "common";
-@import "views/dashboardview";
+//@import "views/dashboardview";
 @import 'views/table-header-common';
 @import "views/generic-style";
 
@@ -27,15 +27,26 @@ $app-background-image: url('img/bg-1920x1080.png');
 $app-background-image-gradient: #f2f7fe 0%, #bcccdc 22%, #AAC1CD 33%, #b7c9d9 55%, #bccddd 66%, #dfebfa 100%;
 //Logo image name
 $logo-image: url('img/bosch_logo.png');
+$dark-gray: #848484;
+$widget-caption-color: $dark-gray;
+$menu-title-bg-color: $dark-gray;
+$view-caption-font-style: 400 1.6em "Open Sans", sans-serif;
+//Text color of menu items and links in menu
+$menu-text-color: #a5a5a5;
+$menu-border-color: #fff;
+$widget-caption-color: $dark-gray;
+//Widget border color
+$widget-border-color: #d4d4d4;
 
 //Top application header border - seen as a line from middle of the logo to other side
 $app-header-border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 
 @mixin devicemanagementtheme {
   @include valo;
-  @include dashboard-dashboard-view;
+  //@include dashboard-dashboard-view;
   @include table-header-common;
   @include generic-styles;
+  @include dashboard-common;
   
   .v-app-loading {
     background-color: rgba(0, 0, 0, 0);
@@ -74,43 +85,4 @@ $app-header-border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     background-position: bottom;
     background-repeat: no-repeat;
   }
-  .view-header {
-      border-bottom: $app-header-border-bottom;
-      font-size: 42px;
-      font-weight: bold;
-      height: 10px;
-      line-height: 50px;
-      padding-bottom: 5px;
-      padding-left: 15px;
-      padding-top: 0;
-      position: absolute;
-      top: 0;
-      width: calc(100% - 15px);
-      z-index: 1;
-    }
-
-    .view-header:before {
-      border-bottom: $app-header-border-bottom;
-      font-size: 42px;
-      font-weight: bold;
-      height: 42px;
-      line-height: 50px;
-      padding-bottom: 5px;
-      padding-left: 0;
-      padding-top: 0;
-      position: absolute;
-      top: 0;
-      width: calc(100% - 15px);
-      z-index: 1;
-    }
-    .view-header:after {
-      background: $logo-image no-repeat right top;
-      background-position: right 0 top 8px;
-      content: "";
-      height: 80px;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: 2;
-    }
 }

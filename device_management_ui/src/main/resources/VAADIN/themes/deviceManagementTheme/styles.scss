@@ -1,7 +1,9 @@
-@import "addons.scss";
+//@import "../valo/valo";
+//@import "addons.scss";
 @import "devicemanagementtheme";
 
 .deviceManagementTheme {
-  @include addons;
+  //@include addons;
   @include devicemanagementtheme;
+  //@include valo;
 }

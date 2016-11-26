@@ -28,11 +28,11 @@ public abstract class AbstractTableHeader extends VerticalLayout {
 	 */
 	private static final long serialVersionUID = 1L;
 
-//	@Autowired
-//	protected transient EventBus.SessionEventBus eventbus;
-	
+	//	@Autowired
+	//	protected transient EventBus.SessionEventBus eventbus;
+
 	@Autowired
-    protected I18N i18n;
+	protected I18N i18n;
 
 	private Label headerCaption;
 	private Button addDeviceIcon;
@@ -42,7 +42,7 @@ public abstract class AbstractTableHeader extends VerticalLayout {
 
 	@PostConstruct
 	protected void init() {
-//		setWidth("500px");
+		//		setWidth("500px");
 		setSizeFull();
 		createComponents();
 		buildLayout();
@@ -67,24 +67,26 @@ public abstract class AbstractTableHeader extends VerticalLayout {
 		final HorizontalLayout titleFilterIconsLayout = createHeaderFilterIconLayout();
 		final HorizontalLayout icons = new HorizontalLayout();
 		icons.addComponents(addDeviceIcon,searchField, searchResetIcon, deleteDeviceIcon);
-		
-		
+
+
 		titleFilterIconsLayout.addComponents(headerCaption,icons);
 		titleFilterIconsLayout.setComponentAlignment(headerCaption,
 				Alignment.TOP_LEFT);
-//		titleFilterIconsLayout.setComponentAlignment(addDeviceIcon,
-//				Alignment.TOP_RIGHT);
-//		titleFilterIconsLayout.setComponentAlignment(searchField,
-//				Alignment.TOP_RIGHT);
-//		titleFilterIconsLayout.setComponentAlignment(searchResetIcon,
-//				Alignment.TOP_RIGHT);
+		//		titleFilterIconsLayout.setComponentAlignment(addDeviceIcon,
+		//				Alignment.TOP_RIGHT);
+		//		titleFilterIconsLayout.setComponentAlignment(searchField,
+		//				Alignment.TOP_RIGHT);
+		//		titleFilterIconsLayout.setComponentAlignment(searchResetIcon,
+		//				Alignment.TOP_RIGHT);
 		titleFilterIconsLayout.setComponentAlignment(icons,
 				Alignment.TOP_RIGHT);
-		titleFilterIconsLayout.setExpandRatio(headerCaption, 0.4F);
-		titleFilterIconsLayout.setExpandRatio(icons, 0.6F);
-//		titleFilterIconsLayout.setSizeFull();
+		titleFilterIconsLayout.setExpandRatio(headerCaption, 0.6F);
+		titleFilterIconsLayout.setExpandRatio(icons, 0.4F);
+		//		titleFilterIconsLayout.setSizeFull();
 		addComponent(titleFilterIconsLayout);
 		setSizeFull();
+		addStyleName("bordered-layout");
+		addStyleName("no-border-bottom");
 	}
 
 	private void restoreState() {
@@ -106,7 +108,7 @@ public abstract class AbstractTableHeader extends VerticalLayout {
 
 	private TextField createSearchField() {
 		return searchField = new TextFieldBuilder(getSearchBoxId())
-				.createSearchField(event -> searchBy(event.getText()));
+		.createSearchField(event -> searchBy(event.getText()));
 	}
 
 	private SPUIButton createResetIcon() {
@@ -129,10 +131,11 @@ public abstract class AbstractTableHeader extends VerticalLayout {
 
 	private HorizontalLayout createHeaderFilterIconLayout() {
 		final HorizontalLayout titleFilterIconsLayout = new HorizontalLayout();
-//		titleFilterIconsLayout.addStyleName(SPUIStyleDefinitions.WIDGET_TITLE);
+		titleFilterIconsLayout.addStyleName(SPUIStyleDefinitions.WIDGET_TITLE);
 		titleFilterIconsLayout.setSpacing(false);
 		titleFilterIconsLayout.setMargin(false);
-		titleFilterIconsLayout.setWidth("500px");
+		titleFilterIconsLayout.setSizeFull();
+		//titleFilterIconsLayout.setWidth("500px");
 		return titleFilterIconsLayout;
 	}
 
@@ -181,7 +184,7 @@ public abstract class AbstractTableHeader extends VerticalLayout {
 	protected abstract void deleteItem(final Button.ClickEvent event);
 
 	protected abstract void resetSearchText();
-	
+
 	protected abstract String getSearchRestIconId();
 
 }

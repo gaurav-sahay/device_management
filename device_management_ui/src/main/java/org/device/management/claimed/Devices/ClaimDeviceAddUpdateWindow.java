@@ -12,6 +12,7 @@ import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
+import com.vaadin.ui.Window;
 
 @SpringComponent
 @VaadinSessionScope
@@ -28,6 +29,7 @@ public class ClaimDeviceAddUpdateWindow extends CustomComponent {
 	private TextField deviceId;
 	private TextField deviceName;
 	private TextArea  deviceDescription;
+	private Window window;
 	
 	public void init(){
 		createRequiredComponent();
@@ -41,6 +43,7 @@ public class ClaimDeviceAddUpdateWindow extends CustomComponent {
 		deviceName = createTextField("prompt.device.name", SPUIStyleDefinitions.CLAIM_DEVICE_NAME);
 		deviceDescription = new TextAreaBuilder().caption(i18n.get("claim.device.description")).style("text-area-style")
 				.prompt(i18n.get("claim.device.description")).immediate(true).id(SPUIStyleDefinitions.CLAIM_DEVICE_DESCRIPTION).buildTextComponent();
+		window = new Window();
 	}
 	
 	
@@ -55,5 +58,19 @@ public class ClaimDeviceAddUpdateWindow extends CustomComponent {
         return new TextFieldBuilder().caption(i18n.get(in18Key)).required(true).prompt(i18n.get(in18Key))
                 .immediate(true).id(id).buildTextComponent();
     }
+
+
+	public void resetComponents() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public Window getWindow(){
+		window.setCaption("Claim Device");
+		window.setId(SPUIStyleDefinitions.CLAIM_DEVICE_POP_UP_WINDOW);
+		window.setDraggable(false);
+        window.setClosable(true);
+		return window;
+	}
 
 }

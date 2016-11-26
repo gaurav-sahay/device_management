@@ -23,4 +23,18 @@
   .filter-reset-icon {
     color: $red-color;
   }
+  
+  //Layout - with no bottom border
+  .no-border-bottom {
+    border-bottom: none !important;
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+
+  .bordered-layout {
+    border: 1px solid $widget-border-color;
+    border-radius: $v-border-radius;
+    width: 500px;
+    background-color: #fafafa;
+  }
 }

@@ -36,4 +36,6 @@ public class SPUIStyleDefinitions {
 	public static final String DEVICE_CLAIMED_BY = "deviceClaimedBy";
 	
 	public static final String CLAIM_DEVICE_TABLE_ID = "claim.device.table.id";
+	
+	public static final String CLAIM_DEVICE_POP_UP_WINDOW = "claim.device.pop.up.window";
 }

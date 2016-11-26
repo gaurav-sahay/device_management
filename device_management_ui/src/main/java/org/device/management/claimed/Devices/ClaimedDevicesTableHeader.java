@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.ViewScope;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.UI;
+import com.vaadin.ui.Window;
 
 @SpringComponent
 @ViewScope
@@ -16,17 +18,17 @@ public class ClaimedDevicesTableHeader extends AbstractTableHeader {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	
+
+
 	@Autowired
 	private ClaimDeviceAddUpdateWindow claimDeviceAddUpdateWindow;
-	
+
 	@Override
 	protected void init() {
 		super.init();
 		claimDeviceAddUpdateWindow.init();
-		
-		
+
+
 	}
 	@Override
 	protected String getHeaderCaption() {
@@ -46,8 +48,10 @@ public class ClaimedDevicesTableHeader extends AbstractTableHeader {
 
 	@Override
 	protected void addNewItem(ClickEvent event) {
-		// TODO Auto-generated method stub
-
+		claimDeviceAddUpdateWindow.resetComponents();
+		final Window claimAddUpdateWindow = claimDeviceAddUpdateWindow.getWindow();
+		UI.getCurrent().addWindow(claimAddUpdateWindow);
+		claimAddUpdateWindow.setVisible(Boolean.TRUE);
 	}
 
 	@Override

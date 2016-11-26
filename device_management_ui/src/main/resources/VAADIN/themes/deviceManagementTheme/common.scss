@@ -5,5 +5,95 @@
 }
 
 @mixin dashboard-common {
+ .v-ui {
 
+    //View caption style
+    .v-caption-view-content {
+      padding-left: 20px;
+      color: $widget-caption-color;
+      font: $view-caption-font-style;
+    }
+
+    //Menu style
+    .valo-menu {
+      color: $menu-text-color;
+      background-color: $menu-background-color;
+      .v-slot-links {
+        text-align: left;
+        bottom: 0;
+        position: relative;
+        padding-bottom: 20px;
+      }
+    }
+
+    // View main content.When view content width and height is less than min-width and min-height ,scroll bars are displayed
+    .view-content {
+      padding-right: 20px;
+      padding-left: 20px;
+      min-width: 1000px;
+      min-height: 400px;
+    }
+
+    //View background styles
+    .main-content {
+      background-image: $app-background-image,linear-gradient(to bottom,$app-background-image-gradient);
+      background-image: $app-background-image,-webkit-linear-gradient(top,$app-background-image-gradient);
+      background-image: $app-background-image,unquote("linear-gradient(to bottom,")$app-background-image-gradient unquote(")");
+      background-position: bottom;
+      background-repeat: no-repeat;
+      border-left: 0 solid #fff;
+      padding-top: 80px;
+      overflow: auto;
+    }
+
+    //View header style with logo details to be displayed
+    .view-header {
+      border-bottom: $app-header-border-bottom;
+      font-size: 42px;
+      font-weight: bold;
+      height: 10px;
+      line-height: 50px;
+      padding-bottom: 5px;
+      padding-left: 15px;
+      padding-top: 0;
+      position: absolute;
+      top: 0;
+      width: calc(100% - 15px);
+      z-index: 1;
+    }
+
+    .view-header:before {
+      border-bottom: $app-header-border-bottom;
+      font-size: 42px;
+      font-weight: bold;
+      height: 42px;
+      line-height: 50px;
+      padding-bottom: 5px;
+      padding-left: 0;
+      padding-top: 0;
+      position: absolute;
+      top: 0;
+      width: calc(100% - 15px);
+      z-index: 1;
+    }
+    .view-header:after {
+      background: $logo-image no-repeat right top;
+      background-position: right 0 top 8px;
+      content: "";
+      height: 80px;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+    }
+  }
+  .v-ui {
+
+    //Menu title background and border style
+    .valo-menu-title {
+      @include valo-gradient($color: $menu-title-bg-color);
+      @include animation(valo-animate-in-slide-right 700ms 700ms backwards);
+      border-bottom-color: $menu-border-color;
+    }
+  }
 }
