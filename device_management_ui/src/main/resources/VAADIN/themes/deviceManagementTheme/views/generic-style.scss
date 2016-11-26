@@ -1,0 +1,11 @@
+ @mixin generic-styles{
+ 
+ .text-area-style {
+    height: 75px !important;
+  }
+  .widget-header {
+    color: #848484;
+    margin-top: 4px;
+    width:500px;
+    }
+ }

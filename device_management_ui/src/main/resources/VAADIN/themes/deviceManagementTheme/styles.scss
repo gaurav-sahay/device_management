@@ -1,0 +1,7 @@
+@import "addons.scss";
+@import "devicemanagementtheme";
+
+.deviceManagementTheme {
+  @include addons;
+  @include devicemanagementtheme;
+}

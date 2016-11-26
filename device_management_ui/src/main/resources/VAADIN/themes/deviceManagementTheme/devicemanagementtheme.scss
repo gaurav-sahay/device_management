@@ -1,0 +1,116 @@
+@import "../valo/valo";
+@import "common";
+@import "views/dashboardview";
+@import 'views/table-header-common';
+@import "views/generic-style";
+
+// Optimize the CSS output
+//$v-included-components: remove($v-included-components, accordion);
+//$v-included-components: remove($v-included-components, colorpicker);
+//$v-included-components: remove($v-included-components, popupview);
+//$v-included-components: remove($v-included-components, progressbar);
+//$v-included-components: remove($v-included-components, slider);
+//$v-included-components: remove($v-included-components, splitpanel);
+//$v-included-components: remove($v-included-components, table);
+//$v-included-components: remove($v-included-components, tree);
+//$v-included-components: remove($v-included-components, treetable);
+//$v-included-components: remove($v-included-components, twincolselect);
+
+// Main layout padding
+$view-padding: round($v-unit-size / 1.5) !default;
+
+// Slight adjustment to menu background-color
+$valo-menu-background-color: #b7c9d9;
+
+//Theme specific application background image
+$app-background-image: url('img/bg-1920x1080.png');
+$app-background-image-gradient: #f2f7fe 0%, #bcccdc 22%, #AAC1CD 33%, #b7c9d9 55%, #bccddd 66%, #dfebfa 100%;
+//Logo image name
+$logo-image: url('img/bosch_logo.png');
+
+//Top application header border - seen as a line from middle of the logo to other side
+$app-header-border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+@mixin devicemanagementtheme {
+  @include valo;
+  @include dashboard-dashboard-view;
+  @include table-header-common;
+  @include generic-styles;
+  
+  .v-app-loading {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: $app-background-image, linear-gradient(to bottom, $app-background-image-gradient);
+    background-image: $app-background-image, -webkit-linear-gradient(top, $app-background-image-gradient);
+    background-image: $app-background-image, -moz-linear-gradient(top, $app-background-image-gradient);
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+   .v-app-loading:before {
+    background: none;
+    height: 40px !important;
+    width: 40px !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0);
+    //border-top-color: $hawkbit-primary-color;
+    //border-right-color: $hawkbit-primary-color;
+    border-radius: 100%;
+    -webkit-animation: v-rotate-360 500ms infinite linear;
+    -moz-animation: v-rotate-360 500ms infinite linear;
+    -ms-animation: v-rotate-360 500ms infinite linear;
+    -o-animation: v-rotate-360 500ms infinite linear;
+    animation: v-rotate-360 500ms infinite linear;
+    pointer-events: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -20px;
+  }
+   .v-generated-body &.v-app {
+    background-image: $app-background-image, linear-gradient(to bottom, $app-background-image-gradient) !important;
+    background-image: $app-background-image, -webkit-linear-gradient(top, $app-background-image-gradient) !important;
+    background-image: $app-background-image, -moz-linear-gradient(top, $app-background-image-gradient) !important;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+  .view-header {
+      border-bottom: $app-header-border-bottom;
+      font-size: 42px;
+      font-weight: bold;
+      height: 10px;
+      line-height: 50px;
+      padding-bottom: 5px;
+      padding-left: 15px;
+      padding-top: 0;
+      position: absolute;
+      top: 0;
+      width: calc(100% - 15px);
+      z-index: 1;
+    }
+
+    .view-header:before {
+      border-bottom: $app-header-border-bottom;
+      font-size: 42px;
+      font-weight: bold;
+      height: 42px;
+      line-height: 50px;
+      padding-bottom: 5px;
+      padding-left: 0;
+      padding-top: 0;
+      position: absolute;
+      top: 0;
+      width: calc(100% - 15px);
+      z-index: 1;
+    }
+    .view-header:after {
+      background: $logo-image no-repeat right top;
+      background-position: right 0 top 8px;
+      content: "";
+      height: 80px;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+    }
+}

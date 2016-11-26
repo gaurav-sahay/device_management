@@ -1,0 +1,26 @@
+@mixin table-header-common {
+
+  //Table header - filter text field style
+  .filter-box {
+    height: 25px !important;
+    transition: width .5s ease-in-out;
+    float: right;
+    border-radius: $v-border-radius;
+  }
+
+  .filter-box:focus:after {
+    box-shadow: none !important;
+    border-radius: $v-border-radius !important;
+  }
+
+  .filter-box-hide {
+    width: 0 !important;
+    padding: 0 !important;
+    border-width: 0 !important;
+  }
+
+  //Search rest icon color
+  .filter-reset-icon {
+    color: $red-color;
+  }
+}
