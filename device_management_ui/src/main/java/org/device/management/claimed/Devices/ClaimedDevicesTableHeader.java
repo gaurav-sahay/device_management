@@ -3,6 +3,7 @@ package org.device.management.claimed.Devices;
 import org.device.management.claim.ui.utils.SPUIStyleDefinitions;
 import org.device.management.common.tables.AbstractTableHeader;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.ViewScope;
@@ -22,6 +23,7 @@ public class ClaimedDevicesTableHeader extends AbstractTableHeader {
 
 	@Autowired
 	private ClaimDeviceAddUpdateWindow claimDeviceAddUpdateWindow;
+	
 
 	@Override
 	protected void init() {

@@ -9,7 +9,7 @@ public class SPUIStyleDefinitions {
 	 /**
      * Lazy query container page size.
      */
-    public static final int PAGE_SIZE = 5;
+    public static final int PAGE_SIZE = 10;
     /**
      * No data.
      */

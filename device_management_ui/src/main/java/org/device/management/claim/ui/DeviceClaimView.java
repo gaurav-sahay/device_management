@@ -43,6 +43,8 @@ public class DeviceClaimView extends VerticalLayout implements View {
 	private void buildLayout() {
 		setSizeFull();
 		createMainLayout();
+		addComponent(mainLayout);
+		setExpandRatio(mainLayout, 1.0F);
 	}
 
 
@@ -52,7 +54,7 @@ public class DeviceClaimView extends VerticalLayout implements View {
 		layoutWidgets();
 		mainLayout.setSizeFull();
 		mainLayout.setSpacing(true);
-		mainLayout.setRowExpandRatio(0, 1f);
+		mainLayout.setRowExpandRatio(0, 1.0F);
 	}
 
 
@@ -64,14 +66,14 @@ public class DeviceClaimView extends VerticalLayout implements View {
 
 
 	private void displayAllWidgets() {
-		//mainLayout.setColumns(2);
+		mainLayout.setColumns(1);
 		//mainLayout.setRows(2);
-		mainLayout.addComponent(claimedDevicesTableLayout);
+		mainLayout.addComponent(claimedDevicesTableLayout,0,0);
 //        mainLayout.addComponent(targetTableLayout, 1, 0);
 //        mainLayout.addComponent(distributionTableLayoutNew, 2, 0);
 		//mainLayout.setColumnExpandRatio(1, 0.55f);
-//        mainLayout.setColumnExpandRatio(2, 0.45f);
-		addComponent(mainLayout);
+		mainLayout.setColumnExpandRatio(0, 1.0F);
+		
 		//setSizeFull();
 	}
 

@@ -50,14 +50,14 @@ public class ClaimedDevicesTable extends AbstractTable {
 	protected Container createContainer() {
 		IndexedContainer container = new IndexedContainer();
 		addContainerProperties(container);
-		for(int i = 0;i<10; i++){
-			Item item = container.addItem(""+i);
-			item.getItemProperty(SPUIStyleDefinitions.DEVICE_ID_COLUMN).setValue(""+i);
-			item.getItemProperty(SPUIStyleDefinitions.DEVICE_NAME_COLUMN).setValue("test"+i);
-			item.getItemProperty(SPUIStyleDefinitions.DEVICE_STATUS_COLUMN).setValue("test"+i);
-			item.getItemProperty(SPUIStyleDefinitions.DEVICE_CLAIMED_BY).setValue("test"+i);
-		
-		}
+//		for(int i = 0;i<10; i++){
+//			Item item = container.addItem(""+i);
+//			item.getItemProperty(SPUIStyleDefinitions.DEVICE_ID_COLUMN).setValue(""+i);
+//			item.getItemProperty(SPUIStyleDefinitions.DEVICE_NAME_COLUMN).setValue("test"+i);
+//			item.getItemProperty(SPUIStyleDefinitions.DEVICE_STATUS_COLUMN).setValue("test"+i);
+//			item.getItemProperty(SPUIStyleDefinitions.DEVICE_CLAIMED_BY).setValue("test"+i);
+//		
+//		}
 		return container;
 	}
 
